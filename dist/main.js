@@ -1,0 +1,1 @@
+fetch("./lotr.txt").then((e=>e.text())).then((e=>{let t=new Date,a=e.replace(/[^a-zA-Z ]/g,"").split(" "),l=new Map;for(let e of a)l.has(e)?l.get(e).data++:l.set(e,{data:1});let o=new Date;console.log(Math.abs(t-o));let n=[];for(let[e,t]of l.entries())n.push({key:e,value:t.data});n.sort(((e,t)=>t.value-e.value));for(let e of n)console.log(`Word: ${e.key} Count: ${e.value}`)}));
